@@ -6,7 +6,6 @@ import (
 	"strings"
 	"time"
 
-	"github.com/zakirkun/ehe/app/domain/contract"
 	"github.com/zakirkun/ehe/app/domain/models"
 	"github.com/zakirkun/ehe/app/domain/types"
 	"github.com/zakirkun/ehe/app/helper"
@@ -18,10 +17,6 @@ import (
 type authServicesContext struct {
 	collection *mongo.Collection
 	ctx        context.Context
-}
-
-func NewAuthServices(collection *mongo.Collection, ctx context.Context) contract.IAuthService {
-	return &authServicesContext{collection: collection, ctx: ctx}
 }
 
 func (s *authServicesContext) SignUpUser(user *types.SignUpInput) (*models.DBResponse, error) {

@@ -4,7 +4,6 @@ import (
 	"context"
 	"strings"
 
-	"github.com/zakirkun/ehe/app/domain/contract"
 	"github.com/zakirkun/ehe/app/domain/models"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
@@ -14,10 +13,6 @@ import (
 type usersServiceContext struct {
 	collection *mongo.Collection
 	ctx        context.Context
-}
-
-func NewUsersServices(collection *mongo.Collection, ctx context.Context) contract.IUserService {
-	return &usersServiceContext{collection: collection, ctx: ctx}
 }
 
 func (r *usersServiceContext) FindUserById(id string) (*models.DBResponse, error) {

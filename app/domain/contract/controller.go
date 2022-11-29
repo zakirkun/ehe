@@ -10,3 +10,7 @@ type IAuthController interface {
 	RefreshAccessToken(ctx *gin.Context)
 	LogoutUser(ctx *gin.Context)
 }
+
+type IUserController interface {
+	GetMe(ctx *gin.Context)
+}

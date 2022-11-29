@@ -9,11 +9,11 @@ type IServicesContext struct {
 	instance instance.IAppContext
 }
 
-type iServices interface {
+type IServices interface {
 	WebServer()
 	OpenDB() *mongo.Client
 }
 
-func NewServices(i instance.IAppContext) iServices {
+func NewServices(i instance.IAppContext) IServices {
 	return &IServicesContext{instance: i}
 }
